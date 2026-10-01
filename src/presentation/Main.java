@@ -96,7 +96,7 @@ public class Main {
                     break;
             }
 
-        } while (true);
+        } while (choice != 7);
     }
 
     private static TicketBooking inputTicketBooking(int bookingId) {
