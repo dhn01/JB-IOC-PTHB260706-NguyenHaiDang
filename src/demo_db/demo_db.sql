@@ -1,4 +1,4 @@
--- CREATE DATABASE db_cinema_booking;
+CREATE DATABASE db_cinema_booking;
 
 CREATE TABLE IF NOT EXISTS ticket_bookings
 (

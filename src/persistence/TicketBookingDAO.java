@@ -114,7 +114,8 @@ public class TicketBookingDAO {
             }
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            String errorMessage = e.getMessage();
+            System.out.println(errorMessage.substring(errorMessage.indexOf(" ") + 1, errorMessage.indexOf("\n")));
         }
 
     }
@@ -128,10 +129,10 @@ public class TicketBookingDAO {
                 );
         ) {
             preparedStatement.setString(1, customerName);
-
             addTicketBooking(preparedStatement, ticketBookingList);
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            String errorMessage = e.getMessage();
+            System.out.println(errorMessage.substring(errorMessage.indexOf(" ") + 1, errorMessage.indexOf("\n")));
         }
 
         return ticketBookingList;
@@ -149,7 +150,8 @@ public class TicketBookingDAO {
 
             addTicketBooking(preparedStatement, ticketBookingList);
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            String errorMessage = e.getMessage();
+            System.out.println(errorMessage.substring(errorMessage.indexOf(" ") + 1, errorMessage.indexOf("\n")));
         }
 
         return ticketBookingList;
@@ -195,7 +197,7 @@ public class TicketBookingDAO {
                 "TRẠNG THÁI"
         );
         if (ticketBookingList.isEmpty()) {
-            System.out.println("Không có dữ liệu");
+            System.out.println("Không có dữ liệu.");
         } else {
             ticketBookingList.stream()
                     .sorted(Comparator.comparing(TicketBooking::getBookingId))

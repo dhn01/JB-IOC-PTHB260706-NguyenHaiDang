@@ -70,7 +70,7 @@ public class InputUtil {
             try {
                 return LocalDateTime.parse(scanner.nextLine(), DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
             } catch (DateTimeParseException e) {
-                System.out.println("Vui lòng nhập ngày giờ.");
+                System.out.println("Vui lòng nhập đúng địng dạng ngày giờ.");
             }
         } while (true);
     }

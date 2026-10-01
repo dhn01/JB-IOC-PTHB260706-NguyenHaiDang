@@ -41,11 +41,13 @@ public class Main {
                 }
                 break;
                 case 2: {
+                    System.out.println("===== THÊM MỚI BOOKING =====");
                     TicketBooking ticketBooking = inputTicketBooking(0);
                     ticketBookingDAO.add(ticketBooking);
                 }
                 break;
                 case 3: {
+                    System.out.println("===== SỬA BOOKING =====");
                     System.out.println("Nhập vào mã booking muốn sửa: ");
                     int bookingId = InputUtil.getPositiveInt("Nhập vào mã booking phải lớn hơn 0.");
                     TicketBooking ticketBooking = inputTicketBooking(bookingId);
@@ -108,9 +110,9 @@ public class Main {
         LocalDateTime bookingTime = InputUtil.getDateTime();
         System.out.println("Nhập vào số lượng ghế đặt: ");
         int quantity = InputUtil.getPositiveInt("Vui lòng nhập số ghế > 0.");
-        System.out.println("Nhập vào trạng thái: ");
+        System.out.println("Nhập vào trạng thái (Booked|Cancelled|CheckedIn): ");
         String status = InputUtil.getString("(Booked|Cancelled|CheckedIn)");
-        TicketBooking ticketBooking = new TicketBooking(
+        return new TicketBooking(
                 bookingId,
                 movieTitle,
                 customerName,
@@ -119,6 +121,5 @@ public class Main {
                 quantity,
                 status
         );
-        return ticketBooking;
     }
 }
